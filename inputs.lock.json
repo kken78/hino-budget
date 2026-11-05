@@ -1,0 +1,35 @@
+{
+  "note": "tools/build_data.py が読む材料。各リポジトリを git pull したあとの HEAD で固定した（2026-11-05）。材料は、このリポジトリと同じフォルダに置いた各リポジトリから読む。",
+  "inputs": [
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "1c3f21c349cab6127c75ee65d8eff9f598df5bd8",
+      "path": "data/fuhyo/fuhyo-r8.json",
+      "sha256": "49a939da97935a62c0ce98c4f72912083dd48d881dfb2d69de1384b64d5a59a6"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "1c3f21c349cab6127c75ee65d8eff9f598df5bd8",
+      "path": "data/audit_log/fuhyo-r8.tsv",
+      "sha256": "b69b02be69410d7a5a414a5469a8303c4281f3dcb788514672af7fbe066abaa5"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "1c3f21c349cab6127c75ee65d8eff9f598df5bd8",
+      "path": "data/sources_index.tsv",
+      "sha256": "74d83f860f8e992f667167a6074cd0c1972c7c0518d959f24bf66b02e47f8701"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "1c3f21c349cab6127c75ee65d8eff9f598df5bd8",
+      "path": "data/plans/jisshi.json",
+      "sha256": "c9cd2e9deda195e68ee688651403d304c1392037adf5bb2370e1a4373a3e8304"
+    },
+    {
+      "repo": "kken78/hino-ronten",
+      "commit": "0c714f7d03575aa7f77ba8e9590ad6ec1d1e69b8",
+      "path": "links/fuhyo.tsv",
+      "sha256": "a333b90117a570164c5160f556efcbe0ed44fa43742792512f42f4b5671f6955"
+    }
+  ]
+}
