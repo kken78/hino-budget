@@ -1,0 +1,19 @@
+{
+  "note": "令和8年度当初予算の会計ごとの予算規模。原典の「３．予算の規模」の表から転記した（千円）。",
+  "source": {
+    "title": "令和8年度当初予算の概要",
+    "url": "https://www.town.shiga-hino.lg.jp/cmsfiles/contents/0000008/8534/R8gaiyou.pdf",
+    "bytes": 1287055,
+    "sha256": "e6444f2f01a49a754d043d04c5af8ce6502ef11341dcce51b17d688af1257eef",
+    "pdf_page": 4,
+    "printed_page": 3,
+    "fetched": "2026-11-05"
+  },
+  "unit": "千円",
+  "accounts": [
+    {"name": "一般会計", "amount": 11900000},
+    {"name": "特別会計", "amount": 4713619},
+    {"name": "企業会計", "amount": 2374665, "note": "企業会計は収益的支出および資本的支出の合計額"}
+  ],
+  "total": {"name": "合計", "amount": 18988284}
+}

@@ -22,6 +22,8 @@
      c. confirmed の node の行: jisshi.json にその key の事業があり、その name が to_label と同じ
      d. confirmed の none の行: to_label が「記載なし」
      e. 附表の各事業が、confirmed の node が1行以上か、confirmed の none が1行だけ
+  5. data/totals.json（当初予算の会計ごとの予算規模。原典から転記した正本）の単位が千円で、
+     会計ごとの和が合計と一致し、出典の url・sha256・pdf_page がある
 どれかが合わなければ data.js を書かずに終了コード 1 で止まる。
 """
 import argparse, csv, hashlib, json, pathlib, re, sys, unicodedata
@@ -227,6 +229,18 @@ for k in F:  # e
     if not ((n >= 1 and z == 0) or (n == 0 and z == 1)):
         errors.append(f'links: {k}（{F[k]["name"]}）の confirmed が node {n}行・記載なし {z}行')
 
+# 5. 当初予算の総額（このリポジトリの data/totals.json。原典から転記した正本） ---------------------
+totals = json.loads((ROOT / 'data/totals.json').read_text(encoding='utf-8'))
+if totals.get('unit') != '千円':
+    errors.append(f"totals: unit が千円でない（{totals.get('unit')!r}）")
+acc = sum(a['amount'] for a in totals['accounts'])
+if acc != totals['total']['amount']:
+    errors.append(f"totals: 会計ごとの和 {acc:,} ≠ 合計 {totals['total']['amount']:,}")
+src = totals['source']
+if not src.get('url', '').startswith('https://') or not re.fullmatch(r'[0-9a-f]{64}', src.get('sha256', '')) \
+        or not isinstance(src.get('pdf_page'), int):
+    errors.append('totals: 出典の url・sha256・pdf_page の形が違う')
+
 if errors:
     fail_now()
 
@@ -250,6 +264,8 @@ meta = {
               'pdftext': sum(1 for r in arows if r['reviewer'] == 'auto:pdftext'),
               'ai': sum(1 for r in arows if r['reviewer'] == 'auto:ai'),
               'human': sum(1 for r in arows if not r['reviewer'].startswith('auto:'))},
+    'totals': {'source': {k: src[k] for k in ('title', 'url', 'pdf_page', 'printed_page', 'fetched')},
+               'accounts': totals['accounts'], 'total': totals['total']['amount']},
 }
 meta['inputs'] = [{'repo': r, 'commit': c} for r, c in meta['inputs']]
 js = ['/* tools/build_data.py で生成。直接編集しない。材料と版は inputs.lock.json にある。 */',
@@ -273,4 +289,6 @@ for p in fuhyo['pillars']:
     print(f"  柱{p['no']} {p['name']}: {len(p['items'])}件・{fmt(sum(i['amount'] for i in p['items']))}千円")
 print(f"  合計: {len(items)}件・{fmt(sum(it['amount'] for _, it in items))}千円")
 print(f"区分: 新規 {sum(1 for _, it in items if '新規' in it['kubun'])}件、拡充 {sum(1 for _, it in items if '拡充' in it['kubun'])}件")
+print('当初予算の総額（data/totals.json）: ' + '・'.join(f"{a['name']} {fmt(a['amount'])}" for a in totals['accounts'])
+      + f" ＝ 合計 {fmt(totals['total']['amount'])}千円（{src['title']} {src['printed_page']}ページ）")
 print('検算 OK。data.js を書き出しました。')
