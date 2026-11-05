@@ -53,6 +53,7 @@ button{cursor:pointer}
 .kpi .k-num small{font-family:var(--sans);font-size:var(--fs-2xs);margin-left:3px;opacity:.85}
 .kpi .k-sub{font-size:var(--fs-3xs);opacity:.75}
 .hero-note{margin-top:16px;font-size:var(--fs-2xs);opacity:.9;border-left:3px solid rgba(255,255,255,.5);padding:2px 0 2px 10px}
+.hero-note a{color:#fff}
 section{padding:36px 0 0}
 .sec-head{margin-bottom:16px}
 .sec-head .eyebrow{font-size:var(--fs-3xs);letter-spacing:.22em;color:var(--ai);font-weight:700}
@@ -148,11 +149,11 @@ tr.total th,tr.total td{border-top:2px solid var(--ai-ink);font-weight:700;backg
 <p class="tagline">町の「令和8年度当初予算の概要」の附表「令和8年度に取り組む主な事業」に載った事業を、柱・款・担当課ごとにまとめています。</p>
 <div class="kpis">
 <div class="kpi"><div class="k-label">附表に載った事業</div><div class="k-num" id="kN">–</div><div class="k-sub">5つの柱の合計</div></div>
-<div class="kpi"><div class="k-label">予算額の合計</div><div class="k-num" id="kAmt">–</div><div class="k-sub">附表の事業の予算額の合計</div></div>
+<div class="kpi"><div class="k-label">予算額の合計</div><div class="k-num" id="kAmt">–</div><div class="k-sub" id="kAmtSub">附表の事業の予算額の合計</div></div>
 <div class="kpi"><div class="k-label">新規</div><div class="k-num" id="kNew">–</div><div class="k-sub">附表で「新規」の印がある事業</div></div>
 <div class="kpi"><div class="k-label">拡充</div><div class="k-num" id="kUp">–</div><div class="k-sub" id="kUpSub">附表で「拡充」の印がある事業</div></div>
 </div>
-<p class="hero-note">当初予算の附表『令和8年度に取り組む主な事業』に載った事業だけを集計したもので、町の予算の全体ではありません。</p>
+<p class="hero-note">当初予算の附表『令和8年度に取り組む主な事業』に載った事業だけを集計したもので、町の予算の全体ではありません。<span id="heroTotals"></span></p>
 </div>
 </div>
 
@@ -215,10 +216,12 @@ tr.total th,tr.total td{border-top:2px solid var(--ai-ink);font-weight:700;backg
 <div class="card"><h3>出典と単位</h3>
 <p id="srcText"></p>
 <p>予算額の単位は千円です。事業名・概要・内訳・款・担当課は原典の表記のまま載せています（誤字と思われる箇所も直していません）。</p>
-<p>附表は当初予算の主な事業を載せた資料で、町の予算の全体ではありません。予算の全体は、町の「<a id="pageLink" href="https://www.town.shiga-hino.lg.jp/0000008534.html" target="_blank" rel="noopener">令和8年度予算</a>」のページの資料をご覧ください。</p></div>
+<p>附表は当初予算の主な事業を載せた資料で、町の予算の全体ではありません。</p>
+<p id="totalsText"></p></div>
 <div class="card"><h3>検収の方法</h3>
 <p id="auditText"></p>
-<p>概要と内訳の文は、この照合の行には含まれていません。</p></div>
+<p>概要と内訳の文は、この照合の行には含まれていません。</p>
+<p>当初予算の総額と会計ごとの額は、このリポジトリで原典の PDF の文字とページの画像に照らして転記し、会計ごとの額の和が合計と合うことを確かめています。</p></div>
 <div class="card"><h3>実施計画との対応</h3>
 <p id="linkText"></p></div>
 <div class="card"><h3>材料の版</h3>
@@ -278,6 +281,10 @@ document.getElementById('kN').innerHTML = fmt(IT.length) + '<small>件</small>';
 document.getElementById('kAmt').innerHTML = fmt(TOTAL) + '<small>千円</small>';
 document.getElementById('kNew').innerHTML = fmt(nNew) + '<small>件</small>';
 document.getElementById('kUp').innerHTML = fmt(nUp) + '<small>件</small>';
+const T = B.totals, TS = T.source, TURL = TS.url + '#page=' + TS.pdf_page;
+const accText = T.accounts.map(a => a.name + ' ' + fmt(a.amount) + '千円').join('・');
+document.getElementById('kAmtSub').textContent = '附表の事業の予算額の合計。当初予算の総額は ' + fmt(T.total) + '千円';
+document.getElementById('heroTotals').innerHTML = '令和8年度当初予算の総額は ' + fmt(T.total) + '千円（' + esc(accText) + '）です（<a href="' + esc(TURL) + '" target="_blank" rel="noopener">「' + esc(TS.title) + '」' + TS.printed_page + 'ページ</a>）。';
 if (nBoth) document.getElementById('kUpSub').textContent = '「拡充」の印がある事業。新規と拡充の両方の印がある' + nBoth + '件は、両方に数えています';
 
 /* 集計 */
@@ -401,6 +408,9 @@ document.getElementById('srcText').innerHTML = '日野町「<a href="https://www
 document.getElementById('auditText').textContent = '附表の各事業の予算額・款・担当課・区分と、柱ごとの事業数・区分の印がある事業数（計' + fmt(A.rows) +
   '行）を、原典の PDF の表の行・列と照らして、すべて一致することを確認しています（shiga-hino-plans の検収の台帳）。内訳は、PDF の文字による機械の照合 ' + fmt(A.pdftext) +
   '行、AI 2人によるページの画像での照合 ' + fmt(A.ai) + '行、人による確認 ' + fmt(A.human) + '行です。';
+const tf = TS.fetched.split('-').map(Number);
+document.getElementById('totalsText').innerHTML = '当初予算の総額（' + fmt(T.total) + '千円）と会計ごとの額は、同じページの「<a href="' + esc(TURL) + '" target="_blank" rel="noopener">' + esc(TS.title) + '</a>」（PDF。' + tf[0] + '年' + tf[1] + '月' + tf[2] + '日に取得）の' + TS.printed_page + 'ページ「予算の規模」の表から転記しています（' + esc(accText) + '）。' +
+  T.accounts.filter(a => a.note).map(a => esc(a.note) + 'です。').join('') + '附表の事業には、一般会計から特別会計・企業会計への繰出金も含まれます。';
 const nLinked = IT.filter(it => it.jisshi.length).length;
 document.getElementById('linkText').textContent = '各事業に対応する「' + B.plan.name + '」の事業は、hino-ronten の台帳（links/fuhyo.tsv）で人が確認したもの（confirmed）だけを載せています。' +
   fmt(nLinked) + '件は実施計画の事業に対応し、' + fmt(IT.length - nLinked) + '件は対応する事業が実施計画に無いこと（記載なし）を確認しています。e番号は、shiga-hino-plans が実施計画の事業に付けた識別子で、原典の番号ではありません。';

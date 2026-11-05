@@ -2,7 +2,7 @@
 
 https://kken78.github.io/hino-budget/
 
-滋賀県日野町の「令和8年度当初予算の概要」の附表「令和8年度に取り組む主な事業」に載った181事業を、柱・款・担当課ごとの件数と予算額、事業の一覧で見るページです。附表に載った事業だけを集計したもので、町の予算の全体ではありません。
+滋賀県日野町の「令和8年度当初予算の概要」の附表「令和8年度に取り組む主な事業」に載った181事業を、柱・款・担当課ごとの件数と予算額、事業の一覧で見るページです。附表に載った事業だけを集計したもので、町の予算の全体ではありません。参考として、当初予算の総額と会計ごとの額（「令和8年度当初予算の概要」3ページ）を付記しています。
 
 出典：日野町「[令和8年度予算](https://www.town.shiga-hino.lg.jp/0000008534.html)」のページの「令和8年度当初予算の概要」の附表（[PDF](https://www.town.shiga-hino.lg.jp/cmsfiles/contents/0000008/8534/R8jigyou.pdf)）
 
@@ -12,10 +12,11 @@ https://kken78.github.io/hino-budget/
 |---|---|
 | `index.html` | 画面。`data.js` を読むだけで、外部の CSS・JavaScript・フォントは読み込まない |
 | `inputs.lock.json` | 材料のファイルごとの、リポジトリ・コミット・パス・sha256 |
+| `data/totals.json` | 当初予算の会計ごとの予算規模（千円）。「令和8年度当初予算の概要」（[PDF](https://www.town.shiga-hino.lg.jp/cmsfiles/contents/0000008/8534/R8gaiyou.pdf)）3ページの表から転記した正本で、出典の URL・バイト数・sha256・ページ・取得日も持つ |
 | `data.js` | 材料から作る画面用のファイル。直接編集しない |
 | `tools/build_data.py` | 材料を検算して `data.js` を作る（標準ライブラリのみ） |
 
-材料はこのリポジトリに置かず、次の2つのリポジトリから読みます。
+附表の材料はこのリポジトリに置かず、次の2つのリポジトリから読みます。
 
 | リポジトリ | ファイル | 中身 |
 |---|---|---|
@@ -39,7 +40,8 @@ https://kken78.github.io/hino-budget/
      - confirmed の node の行の事業が jisshi.json にあり、事業名が to_label と同じ
      - confirmed の none の行の to_label が「記載なし」
      - 附表の各事業が、confirmed の node が1行以上か、confirmed の none が1行だけ
-3. 実行すると、柱ごとの件数と予算額の合計を表示する。
+   - `data/totals.json` の単位が千円で、会計ごとの和が合計と一致し、出典の url・sha256・pdf_page がある
+3. 実行すると、柱ごとの件数と予算額の合計、当初予算の総額を表示する。
 
 材料を新しい版にするときは、各リポジトリを `git pull` し、`inputs.lock.json` の各ファイルの commit（`git -C <リポジトリ> rev-parse HEAD`）と sha256（`sha256sum <ファイル>`）を書き換えてから、手順2を行う。
 
