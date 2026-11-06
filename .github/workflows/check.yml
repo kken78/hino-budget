@@ -1,0 +1,66 @@
+# 材料の検算と data.js の再生成の確認。
+# プルリクエストと main への push のたびに、inputs.lock.json の commit の材料で
+# tools/build_data.py を実行し、作り直した data.js がコミットされたものと一致するかを確かめる。
+name: check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      # 材料のリポジトリを隣のフォルダに置くため、このリポジトリも1段下に置く
+      - uses: actions/checkout@v4
+        with:
+          path: hino-budget
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: inputs.lock.json から材料の commit を読む
+        id: lock
+        working-directory: hino-budget
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, sys
+          lock = json.load(open('inputs.lock.json', encoding='utf-8'))
+          commits = {}
+          for i in lock['inputs']:
+              commits.setdefault(i['repo'], set()).add(i['commit'])
+          for repo, cs in commits.items():
+              if len(cs) != 1:
+                  sys.exit(f'{repo} の commit が1つに定まりません: {sorted(cs)}')
+          print('plans=' + commits['kken78/shiga-hino-plans'].pop())
+          print('ronten=' + commits['kken78/hino-ronten'].pop())
+          PY
+
+      - uses: actions/checkout@v4
+        with:
+          repository: kken78/shiga-hino-plans
+          ref: ${{ steps.lock.outputs.plans }}
+          path: shiga-hino-plans
+
+      - uses: actions/checkout@v4
+        with:
+          repository: kken78/hino-ronten
+          ref: ${{ steps.lock.outputs.ronten }}
+          path: hino-ronten
+
+      - name: 材料の検算と data.js の作り直し(build_data.py)
+        working-directory: hino-budget
+        run: python3 tools/build_data.py --src "$GITHUB_WORKSPACE"
+
+      - name: data.js がコミットされたものと一致するか
+        working-directory: hino-budget
+        run: |
+          if ! git diff --exit-code --stat -- data.js; then
+            echo "::error::data.js が材料から作り直した結果と一致しません。python3 tools/build_data.py を実行してコミットしてください。"
+            exit 1
+          fi
