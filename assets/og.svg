@@ -1,0 +1,24 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E4E9C"/><stop offset="1" stop-color="#123563"/></linearGradient>
+<filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="14" flood-color="#000" flood-opacity="0.18"/></filter>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<path d="M1200,0 L1200,260 C1040,300 980,150 820,200 C700,236 640,120 540,150 L540,0 Z" fill="#ffffff" opacity="0.05"/>
+<path d="M0,630 L0,470 C160,430 240,560 420,520 C560,490 660,600 820,560 L1200,560 L1200,630 Z" fill="#ffffff" opacity="0.06"/>
+<g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif">
+<text x="80" y="104" fill="#C9D7EE" font-size="24" font-weight="700" letter-spacing="4">滋賀県 日野町</text>
+<rect x="80" y="122" width="64" height="4" rx="2" fill="#C9D7EE" opacity="0.8"/>
+<text x="78" y="206" fill="#ffffff" font-size="72" font-weight="700" letter-spacing="1">当初予算</text>
+<text x="78" y="284" fill="#ffffff" font-size="60" font-weight="700" letter-spacing="1">主な事業</text>
+<text x="82" y="352" fill="#ffffff" font-size="25" font-weight="500" opacity="0.88">当初予算の概要の附表を、柱・款・担当課ごとに、6年分</text>
+<text x="82" y="486" fill="#ffffff" font-size="58" font-weight="700" >1,031</text>
+<text x="256" y="486" fill="#C9D7EE" font-size="26" font-weight="700" >事業</text>
+<text x="352.2" y="486" fill="#ffffff" font-size="58" font-weight="700" >令和3〜8</text>
+<text x="599" y="486" fill="#C9D7EE" font-size="26" font-weight="700" >年度</text>
+<text x="82" y="532" fill="#C9D7EE" font-size="24" font-weight="500" >附表に載った事業の集計で、町の予算の全体ではない</text>
+<text x="80" y="592" fill="#C9D7EE" font-size="24" font-weight="500" opacity="0.85">公開資料から作成した個人の試作（非公式）｜日野町データポータル</text>
+</g>
+<g filter="url(#soft)"><rect x="760" y="126" width="400" height="408" rx="20" fill="#ffffff"/></g>
+<g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif" transform="translate(0,126)"><text x="788" y="50" fill="#1A2333" font-size="24" font-weight="700" >主な事業の予算額の計（億円）</text><text x="788" y="82" fill="#5B6B85" font-size="24" font-weight="500" >令和3〜8年度</text><text x="788" y="114" fill="#5B6B85" font-size="24" font-weight="500" >当初予算の概要 附表</text><text x="788" y="178" fill="#1A2333" font-size="24" font-weight="700" >令和3年度</text><rect x="911.92" y="162" width="150" height="14" rx="7" fill="#E9EEF7"/><rect x="911.92" y="162" width="106" height="14" rx="7" fill="#1E4E9C"/><text x="1132" y="178" fill="#1A2333" font-size="24" font-weight="700" text-anchor="end">56.1</text><text x="788" y="218" fill="#1A2333" font-size="24" font-weight="700" >令和4年度</text><rect x="911.92" y="202" width="150" height="14" rx="7" fill="#E9EEF7"/><rect x="911.92" y="202" width="116" height="14" rx="7" fill="#1E4E9C"/><text x="1132" y="218" fill="#1A2333" font-size="24" font-weight="700" text-anchor="end">61.2</text><text x="788" y="258" fill="#1A2333" font-size="24" font-weight="700" >令和5年度</text><rect x="911.92" y="242" width="150" height="14" rx="7" fill="#E9EEF7"/><rect x="911.92" y="242" width="114" height="14" rx="7" fill="#1E4E9C"/><text x="1132" y="258" fill="#1A2333" font-size="24" font-weight="700" text-anchor="end">60.4</text><text x="788" y="298" fill="#1A2333" font-size="24" font-weight="700" >令和6年度</text><rect x="911.92" y="282" width="150" height="14" rx="7" fill="#E9EEF7"/><rect x="911.92" y="282" width="120" height="14" rx="7" fill="#1E4E9C"/><text x="1132" y="298" fill="#1A2333" font-size="24" font-weight="700" text-anchor="end">63.6</text><text x="788" y="338" fill="#1A2333" font-size="24" font-weight="700" >令和7年度</text><rect x="911.92" y="322" width="150" height="14" rx="7" fill="#E9EEF7"/><rect x="911.92" y="322" width="132" height="14" rx="7" fill="#1E4E9C"/><text x="1132" y="338" fill="#1A2333" font-size="24" font-weight="700" text-anchor="end">69.9</text><text x="788" y="378" fill="#1A2333" font-size="24" font-weight="700" >令和8年度</text><rect x="911.92" y="362" width="150" height="14" rx="7" fill="#E9EEF7"/><rect x="911.92" y="362" width="150" height="14" rx="7" fill="#1E4E9C"/><text x="1132" y="378" fill="#1A2333" font-size="24" font-weight="700" text-anchor="end">79.5</text></g>
+</svg>

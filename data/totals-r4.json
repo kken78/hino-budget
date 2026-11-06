@@ -1,0 +1,20 @@
+{
+  "note": "令和4年度当初予算の会計ごとの予算規模。原典の「３．予算の規模」の表から転記した（千円）。原典は hino-town-docs の台帳（data/sources.tsv の yosan-r4-gaiyou）の url から取得した。",
+  "source": {
+    "title": "令和4年度当初予算案の概要",
+    "docs_id": "yosan-r4-gaiyou",
+    "url": "https://www.town.shiga-hino.lg.jp/cmsfiles/contents/0000006/6277/R4.tousho.gaiyou.pdf",
+    "bytes": 855770,
+    "sha256": "88314dc8abd63dd441b76ac8f5a48e918914239812282d212b946afadc0fdf49",
+    "pdf_page": 3,
+    "printed_page": 2,
+    "fetched": "2026-11-06"
+  },
+  "unit": "千円",
+  "accounts": [
+    {"name": "一般会計", "amount": 9568000},
+    {"name": "特別会計", "amount": 5043471},
+    {"name": "企業会計", "amount": 2286654, "note": "※企業会計は収益的支出および資本的支出の合計額"}
+  ],
+  "total": {"name": "合計", "amount": 16898125}
+}

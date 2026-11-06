@@ -6,4 +6,5 @@
 4. main に直接コミットしない。作業ブランチを切り、PR を作る。マージは依頼者がする。
 5. 数値は、原典で確かめられるものだけを書く。推定で埋めない。原典の文字は直さない（README の「作り直し方」の末尾）。
 6. データの作り直しと検査は、README の「作り直し方」の手順で行う（`python3 tools/build_data.py`）。検算が合わなければ `data.js` は書き出されず、終了コード 1 で止まる。`data.js` は直接編集しない。
-7. 材料の版を上げたときは、`inputs.lock.json` と `data.js` を同じコミットで直す。PR と main への push のたびに、GitHub Actions（`.github/workflows/check.yml`）が `inputs.lock.json` の commit の材料で `tools/build_data.py` を実行し、`data.js` がコミットされたものと一致するかを確かめる。
+7. 材料の版を上げたときは、`inputs.lock.json` と `data.js` を同じコミットで直す。材料は shiga-hino-plans・hino-ronten・hino-town-docs の3リポジトリ。PR と main への push のたびに、GitHub Actions（`.github/workflows/check.yml`）が `inputs.lock.json` の commit の材料で `tools/build_data.py` を実行し、`data.js` がコミットされたものと一致するかを確かめる。
+8. 増減は矢印と文言（▲ 増・▼ 減・＝ 同額）で示し、向きや良し悪しの色を使わない（hino-portal-prompts の DESIGN-portal-draft.md 3.3）。

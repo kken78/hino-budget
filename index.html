@@ -5,16 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#1E4E9C">
-<title>令和8年度 主な事業（当初予算）｜日野町データポータル（非公式）</title>
-<meta name="description" content="滋賀県日野町の令和8年度当初予算の附表「令和8年度に取り組む主な事業」に載った事業の一覧と、柱・款・担当課ごとの件数と金額（非公式）。">
+<title>当初予算 主な事業（令和3〜8年度）｜日野町データポータル（非公式）</title>
+<meta name="description" content="滋賀県日野町の令和3〜8年度の当初予算の概要の附表「主な事業」に載った事業の一覧と、柱・款・担当課ごとの件数と金額、年度の推移（非公式）。">
 <link rel="canonical" href="https://kken78.github.io/hino-budget/">
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNiAyNiI+PHJlY3Qgd2lkdGg9IjI2IiBoZWlnaHQ9IjI2IiByeD0iNiIgZmlsbD0iI0VGRjNGOSIvPjxyZWN0IHg9IjMiIHk9IjE1IiB3aWR0aD0iMjAiIGhlaWdodD0iMy40IiByeD0iMS43IiBmaWxsPSIjMUU0RTlDIi8+PHJlY3QgeD0iNS41IiB5PSI5LjUiIHdpZHRoPSIxNSIgaGVpZ2h0PSIzLjQiIHJ4PSIxLjciIGZpbGw9IiMzQjZGQkYiLz48cmVjdCB4PSI5IiB5PSI0IiB3aWR0aD0iOCIgaGVpZ2h0PSIzLjQiIHJ4PSIxLjciIGZpbGw9IiNDMzNEMkUiLz48L3N2Zz4=">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="日野町データポータル（非公式）">
-<meta property="og:title" content="令和8年度 主な事業（当初予算）｜日野町データポータル（非公式）">
-<meta property="og:description" content="滋賀県日野町の令和8年度当初予算の附表「令和8年度に取り組む主な事業」に載った事業の一覧と、柱・款・担当課ごとの件数と金額（非公式）。">
+<meta property="og:title" content="当初予算 主な事業（令和3〜8年度）｜日野町データポータル">
+<meta property="og:description" content="令和3〜8年度の当初予算の概要の附表から、主な事業を柱・款・担当課ごとに転記し、年度の推移を示す。公開資料から作成した個人の試作。">
 <meta property="og:url" content="https://kken78.github.io/hino-budget/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://kken78.github.io/hino-budget/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="当初予算 主な事業（令和3〜8年度）。公開資料から作成した個人の試作（非公式）">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kken78.github.io/hino-budget/og.png">
 <style>
 :root{
   --ai:#1E4E9C; --ai-deep:#123563; --ai-ink:#0C2547; --shu:#C33D2E;
@@ -45,11 +50,16 @@ button{cursor:pointer}
 .hero{background:linear-gradient(135deg,var(--ai-ink) 0%,var(--ai-deep) 45%,var(--ai) 100%);color:#fff;padding:40px 0 44px}
 .hero .eyebrow{font-size:var(--fs-3xs);letter-spacing:.22em;opacity:.75;font-weight:700}
 .hero h2{font-family:var(--serif);font-size:var(--fs-h1);letter-spacing:.03em;margin:6px 0 4px}
-.hero .tagline{opacity:.85;font-size:var(--fs-sm);margin-bottom:22px}
+.hero .tagline{opacity:.85;font-size:var(--fs-sm);margin-bottom:18px}
+.years{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.years button{border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.08);color:#fff;font-size:var(--fs-sm);font-weight:700;padding:8px 14px;min-height:42px;border-radius:10px}
+.years button:hover{background:rgba(255,255,255,.18)}
+.years button.is-on{background:#fff;color:var(--ai-ink);border-color:#fff}
+.years .years-label{width:100%;font-size:var(--fs-2xs);opacity:.8;font-weight:700;margin-bottom:-2px}
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .kpi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 16px;min-width:0}
 .kpi .k-label{font-size:var(--fs-2xs);opacity:.8}
-.kpi .k-num{font-family:var(--serif);font-size:var(--fs-xl);line-height:1.3;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.kpi .k-num{font-family:var(--serif);font-size:var(--fs-xl);line-height:1.3;font-variant-numeric:tabular-nums;white-space:nowrap}
 .kpi .k-num small{font-family:var(--sans);font-size:var(--fs-2xs);margin-left:3px;opacity:.85}
 .kpi .k-sub{font-size:var(--fs-3xs);opacity:.75}
 .hero-note{margin-top:16px;font-size:var(--fs-2xs);opacity:.9;border-left:3px solid rgba(255,255,255,.5);padding:2px 0 2px 10px}
@@ -72,11 +82,24 @@ section{padding:36px 0 0}
 .pl:hover{border-color:var(--ai)}
 .pl.is-on{border-color:var(--ai-ink);box-shadow:inset 0 0 0 1px var(--ai-ink);background:#F2F6FC}
 .pl-name{font-weight:700;color:var(--ai-ink);min-width:0}
-.pl-name span{display:inline-block;font-size:var(--fs-3xs);font-weight:700;color:#fff;border-radius:6px;padding:0 7px;margin-right:6px;vertical-align:1px}
+.pl-name span,.pno{display:inline-block;font-size:var(--fs-3xs);font-weight:700;color:#fff;border-radius:6px;padding:0 7px;margin-right:6px;vertical-align:1px}
 .bar{height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
 .bar i{display:block;height:100%;border-radius:7px}
 .pl-val{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:var(--fs-xs)}
 .pl-val b{font-size:var(--fs-sm)}
+/* 柱ごとの推移 */
+.trend{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.trend-card{border:1px solid var(--line);border-radius:10px;padding:12px 12px 8px;min-width:0}
+.trend-card h4{font-size:var(--fs-sm);color:var(--ai-ink);margin-bottom:4px;overflow-wrap:anywhere}
+.trend-card svg{display:block;width:100%;height:auto;font-family:var(--sans)}
+.trend-card svg text{font-size:12.5px;fill:var(--ink)}
+.trend-card svg .tick{fill:var(--muted)}
+.trend-card svg .grid{stroke:var(--line);stroke-width:1}
+.trend-card svg .axis{stroke:var(--muted);stroke-width:1}
+.trend-card svg .val{font-weight:700;font-variant-numeric:tabular-nums}
+details.alt{margin-top:14px;border:1px solid var(--line);border-radius:10px;padding:0 12px}
+details.alt summary{cursor:pointer;font-size:var(--fs-xs);font-weight:700;color:var(--ai);padding:10px 0}
+details.alt .table-wrap{padding-bottom:12px}
 /* 表 */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .two h3{font-size:var(--fs-md);color:var(--ai-ink);margin-bottom:8px}
@@ -87,6 +110,11 @@ thead th{font-size:var(--fs-2xs);color:var(--muted);font-weight:700;background:#
 th:first-child,td:first-child{text-align:left}
 tbody th{font-weight:700;color:var(--ai-ink)}
 tr.total th,tr.total td{border-top:2px solid var(--ai-ink);font-weight:700;background:#F2F6FC}
+td.txt{text-align:left;white-space:normal;min-width:12em}
+tr.is-on th,tr.is-on td{background:#F2F6FC}
+#tShogo th,#tShogo td{white-space:normal}
+#tShogo td.txt{min-width:7em}
+#tShogo small{color:var(--muted)}
 .src-note{font-size:var(--fs-2xs);color:var(--muted);margin-top:12px}
 /* 一覧 */
 .filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:12px}
@@ -111,6 +139,7 @@ tr.total th,tr.total td{border-top:2px solid var(--ai-ink);font-weight:700;backg
 .tag{display:inline-block;font-size:var(--fs-3xs);font-weight:700;border-radius:6px;padding:0 7px;margin-left:6px;vertical-align:1px;border:1px solid}
 .tag.new{color:var(--shu);border-color:var(--shu)}
 .tag.up{color:var(--ai);border-color:var(--ai)}
+.tag.yrs{color:var(--muted);border-color:var(--line)}
 .it-body{padding:4px 4px 18px 18px;font-size:var(--fs-sm)}
 .it-body p{margin-bottom:8px;overflow-wrap:anywhere}
 .it-body ul{list-style:none;margin:0 0 10px;padding:8px 12px;background:#F7F9FC;border-radius:8px}
@@ -118,17 +147,26 @@ tr.total th,tr.total td{border-top:2px solid var(--ai-ink);font-weight:700;backg
 .it-dl{display:grid;grid-template-columns:8em minmax(0,1fr);gap:4px 12px;font-size:var(--fs-xs)}
 .it-dl dt{color:var(--muted);font-weight:700}
 .it-dl dd{overflow-wrap:anywhere}
+.it-body h4{font-size:var(--fs-sm);color:var(--ai-ink);margin:14px 0 6px}
+.chain{font-size:var(--fs-xs)}
+.chain th,.chain td{padding:6px 8px}
+.chain .cbar{display:inline-block;height:10px;background:var(--bg);border-radius:5px;width:7em;vertical-align:middle;margin-right:6px;overflow:hidden}
+.chain .cbar i{display:block;height:100%;border-radius:5px;background:var(--ai)}
+.chain .none{color:var(--muted)}
 .empty{padding:20px 4px;color:var(--muted);font-size:var(--fs-sm)}
 .learn{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .learn h3{font-family:var(--serif);font-size:var(--fs-base);color:var(--ai-ink);margin-bottom:8px}
-.learn p{font-size:var(--fs-xs);color:var(--ink);margin-bottom:8px;overflow-wrap:anywhere}
+.learn p,.learn li{font-size:var(--fs-xs);color:var(--ink);margin-bottom:8px;overflow-wrap:anywhere}
+.learn ul{padding-left:1.2em}
+.shogo-how{padding-left:1.2em;font-size:var(--fs-xs);margin-top:8px}
+.shogo-how li{margin-bottom:4px}
 .site-foot{margin-top:56px;background:var(--ai-ink);color:#C9D6EA;padding:36px 0 44px;font-size:var(--fs-2xs)}
 .site-foot a{color:#fff}
 .foot-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:30px}
 .site-foot h3{font-family:var(--serif);color:#fff;font-size:var(--fs-sm);margin-bottom:8px;letter-spacing:.04em}
 .foot-note{margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,.15);opacity:.8}
-@media (max-width:820px){.kpis{grid-template-columns:1fr 1fr}.learn,.foot-grid,.two{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}}
-@media (max-width:640px){.pl{grid-template-columns:minmax(0,1fr) auto}.pl .pl-name{grid-column:1 / -1}.pl .bar{grid-row:2;grid-column:1}.pl .pl-val{grid-row:2;grid-column:2}}
+@media (max-width:820px){.kpis{grid-template-columns:1fr 1fr}.learn,.foot-grid,.two,.trend{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.card{padding:16px 14px}.trend-card{padding:8px 8px 6px}.kpi .k-num{font-size:1.25rem}.pl{grid-template-columns:minmax(0,1fr) auto}.pl .pl-name{grid-column:1 / -1}.pl .bar{grid-row:2;grid-column:1}.pl .pl-val{grid-row:2;grid-column:2}.it-dl{grid-template-columns:1fr}.it-dl dt{margin-top:4px}}
 </style>
 </head>
 <body>
@@ -145,22 +183,23 @@ tr.total th,tr.total td{border-top:2px solid var(--ai-ink);font-weight:700;backg
 <div class="hero">
 <div class="wrap">
 <p class="eyebrow">BUDGET</p>
-<h2>令和8年度 主な事業（当初予算）</h2>
-<p class="tagline">町の「令和8年度当初予算の概要」の附表「令和8年度に取り組む主な事業」に載った事業を、柱・款・担当課ごとにまとめています。</p>
+<h2>当初予算 主な事業（令和3〜8年度）</h2>
+<p class="tagline">町の各年度の「当初予算の概要」の附表「令和○年度に取り組む主な事業」に載った事業を、柱・款・担当課ごとにまとめ、年度の推移を示しています。</p>
+<div class="years" role="group" aria-label="年度の切り替え" id="years"><span class="years-label">年度を選ぶ</span></div>
 <div class="kpis">
-<div class="kpi"><div class="k-label">附表に載った事業</div><div class="k-num" id="kN">–</div><div class="k-sub">5つの柱の合計</div></div>
+<div class="kpi"><div class="k-label" id="kNLabel">附表に載った事業</div><div class="k-num" id="kN">–</div><div class="k-sub">5つの柱の合計</div></div>
 <div class="kpi"><div class="k-label">予算額の合計</div><div class="k-num" id="kAmt">–</div><div class="k-sub" id="kAmtSub">附表の事業の予算額の合計</div></div>
 <div class="kpi"><div class="k-label">新規</div><div class="k-num" id="kNew">–</div><div class="k-sub">附表で「新規」の印がある事業</div></div>
 <div class="kpi"><div class="k-label">拡充</div><div class="k-num" id="kUp">–</div><div class="k-sub" id="kUpSub">附表で「拡充」の印がある事業</div></div>
 </div>
-<p class="hero-note">当初予算の附表『令和8年度に取り組む主な事業』に載った事業だけを集計したもので、町の予算の全体ではありません。<span id="heroTotals"></span></p>
+<p class="hero-note" id="heroNote"></p>
 </div>
 </div>
 
 <main>
 <section>
 <div class="wrap">
-<div class="sec-head"><p class="eyebrow">PILLARS</p><h2>柱別</h2>
+<div class="sec-head"><p class="eyebrow">PILLARS</p><h2 id="plH2">柱別</h2>
 <p>附表は事業を5つの柱に分けて載せています。柱を押すと、下の「事業の一覧」をその柱の事業に絞り込みます。もう一度押すと解除します。</p></div>
 <div class="card">
 <div class="chart-top">
@@ -175,9 +214,21 @@ tr.total th,tr.total td{border-top:2px solid var(--ai-ink);font-weight:700;backg
 </div>
 </section>
 
+<section id="trend">
+<div class="wrap">
+<div class="sec-head"><p class="eyebrow">TREND</p><h2>柱ごとの事業費の推移（令和3〜8年度）</h2>
+<p>各年度の附表に載った事業の予算額を柱ごとに合計し、6年分を並べています。附表に載った事業だけの合計で、町の予算の全体ではありません。5つのグラフの縦軸は同じ目盛りです。</p></div>
+<div class="card">
+<div class="trend" id="trendCards"></div>
+<p class="chart-note">横軸は年度（令和）、縦軸は億円（1億円＝100,000千円）。点の近くの数字は億円で、小数第2位を四捨五入しています。千円の値は下の表にあります。</p>
+<details class="alt"><summary>数値の表を開く（柱ごと・年度ごとの予算額、千円）</summary><div class="table-wrap"><table id="tTrend"><thead></thead><tbody></tbody></table></div></details>
+</div>
+</div>
+</section>
+
 <section>
 <div class="wrap">
-<div class="sec-head"><p class="eyebrow">BREAKDOWN</p><h2>款別・担当課別</h2>
+<div class="sec-head"><p class="eyebrow">BREAKDOWN</p><h2 id="bdH2">款別・担当課別</h2>
 <p>附表の各事業の「款」と「担当課」ごとの件数と予算額です。金額の多い順に並べています。</p></div>
 <div class="two">
 <div class="card"><h3>款別</h3><div class="table-wrap"><table id="tKan"><thead></thead><tbody></tbody></table></div></div>
@@ -188,8 +239,8 @@ tr.total th,tr.total td{border-top:2px solid var(--ai-ink);font-weight:700;backg
 
 <section id="list">
 <div class="wrap">
-<div class="sec-head"><p class="eyebrow">PROGRAMS</p><h2>事業の一覧</h2>
-<p>事業名を押すと、概要・内訳・予算額・担当課・款・区分・原典のページ・対応する実施計画の事業を表示します。</p></div>
+<div class="sec-head"><p class="eyebrow">PROGRAMS</p><h2 id="listH2">事業の一覧</h2>
+<p>事業名を押すと、概要・内訳・予算額・担当課・款・区分・原典のページと、年度ごとの予算額の推移を表示します。令和8年度の事業には、対応する実施計画の事業も表示します。</p></div>
 <div class="card">
 <div class="filters">
 <label class="q">検索（事業名・概要・担当課）<input type="search" id="fQ" placeholder="例：こども園"></label>
@@ -209,23 +260,52 @@ tr.total th,tr.total td{border-top:2px solid var(--ai-ink);font-weight:700;backg
 </div>
 </section>
 
+<section id="totals">
+<div class="wrap">
+<div class="sec-head"><p class="eyebrow">TOTALS</p><h2>予算の規模（令和3〜8年度）</h2>
+<p>各年度の「当初予算の概要」の「予算の規模」の表から、会計ごとの額を転記しています。単位は千円。「前年度との差」は、この表の合計の差です。</p></div>
+<div class="card">
+<div class="table-wrap"><table id="tTotals"><thead></thead><tbody></tbody></table></div>
+<p class="src-note" id="totalsNote"></p>
+</div>
+</div>
+</section>
+
+<section id="shogo">
+<div class="wrap">
+<div class="sec-head"><p class="eyebrow">AUDIT</p><h2>原典との照合（年度ごと）</h2>
+<p>このページの数値や名前は、shiga-hino-plans で原典と1件ずつ照らしています。年度ごとの照合の状況を、検収の台帳から数えて示します。</p></div>
+<div class="card">
+<div class="table-wrap"><table id="tShogo"><thead></thead><tbody></tbody></table></div>
+<p class="src-note">照合の対象は、各事業の予算額・款・担当課・区分と、柱ごとの事業数・区分の印がある事業数です。概要と内訳の文は照合の行に含まれず、段3（文章の点検）で扱います。段3は、照合の行に入らない文章と、原典の中の文章と数値の整合・誤字を AI が指摘し、指摘ごとに人が扱い（直す・原典どおり載せる・対象外）を決めるものです。「未判断」の指摘は、人の判断が済むまで原典どおりに載せています。</p>
+<h3 style="font-size:var(--fs-sm);color:var(--ai-ink);margin-top:14px">照合の方法</h3>
+<ul class="shogo-how">
+<li>このページの数値や名前を、原典と1件ずつ照らしています。</li>
+<li>プログラムによる照合：原典の文字データで、値・項目名・値の並び・列見出しの位置がすべて合うものを照合済みとしています。</li>
+<li>AI（2回）による照合：同じ種類の AI を、このページを作った経緯を伝えずに2回別々に使い、原典のページの画像で行と列の対応まで確かめさせ、両方が「一致・確信度 高」としたものだけを照合済みとしています。同じように読み違えるおそれがあるため、一部は人が抜き取りで確かめています。</li>
+<li>人による照合：人が原典と見比べて、一致を確かめたものです。</li>
+<li>人の確認で誤りが見つかったものは照合済みから外れるので、件数が減ることがあります。</li>
+</ul>
+</div>
+</div>
+</section>
+
 <section>
 <div class="wrap">
 <div class="sec-head"><p class="eyebrow">NOTES</p><h2>データについて</h2></div>
 <div class="learn">
 <div class="card"><h3>出典と単位</h3>
-<p id="srcText"></p>
+<p>日野町の各年度の「予算」のページに載っている「当初予算の概要」の附表（PDF）。</p>
+<ul id="srcList"></ul>
 <p>予算額の単位は千円です。事業名・概要・内訳・款・担当課は原典の表記のまま載せています（誤字と思われる箇所も直していません）。</p>
-<p>附表は当初予算の主な事業を載せた資料で、町の予算の全体ではありません。</p>
-<p id="totalsText"></p></div>
-<div class="card"><h3>検収の方法</h3>
-<p id="auditText"></p>
-<p>概要と内訳の文は、この照合の行には含まれていません。</p>
-<p>当初予算の総額と会計ごとの額は、このリポジトリで原典の PDF の文字とページの画像に照らして転記し、会計ごとの額の和が合計と合うことを確かめています。</p></div>
+<p>附表は当初予算の主な事業を載せた資料で、町の予算の全体ではありません。附表の事業には、一般会計から特別会計・企業会計への繰出金も含まれます。</p></div>
+<div class="card"><h3>年度をまたぐ事業の対応</h3>
+<p id="chainText"></p>
+<p>「附表に無い」は、その年度の附表に載っていないことを示すもので、予算が無かったとは限りません。分かれた事業・まとまった事業は、どの部分が引き継がれたかを原典で確かめられないため、つないでいません。</p></div>
 <div class="card"><h3>実施計画との対応</h3>
 <p id="linkText"></p></div>
 <div class="card"><h3>材料の版</h3>
-<p>このページは、次のリポジトリの決まった版の材料から作っています。</p>
+<p>このページは、次のリポジトリの決まった版の材料から作っています。当初予算の総額と会計ごとの額は、このリポジトリで原典の PDF の文字とページの画像に照らして転記し、会計ごとの額の和が合計と合うことと、出典の URL・バイト数・sha256 が hino-town-docs の台帳と合うことを確かめています。</p>
 <p id="inputsText"></p></div>
 </div>
 </div>
@@ -246,7 +326,7 @@ tr.total th,tr.total td{border-top:2px solid var(--ai-ink);font-weight:700;backg
 <p><a href="https://kken78.github.io/hino-portal/" data-site="portal">日野町データポータル（一覧）</a></p>
 </div>
 </div>
-<p class="foot-note">事業名・金額などは公表資料からの転記で、内容の正確性を保証するものではありません。｜材料の版の固定日：2026年11月5日</p>
+<p class="foot-note">事業名・金額などは公表資料からの転記で、内容の正確性を保証するものではありません。｜材料の版の固定日：2026年11月6日</p>
 </div>
 </footer>
 <script src="data.js"></script>
@@ -262,31 +342,85 @@ document.querySelectorAll('[data-site]').forEach(function(a){
   var k = a.getAttribute('data-site'); if (SITES[k]) a.setAttribute('href', SITES[k]);
 });
 
-const B = BUDGET, IT = B.items;
+const B = BUDGET, ALL = B.items, YEARS = B.years;
 const PCOL = ['#1E4E9C','#C33D2E','#2A8C82','#B7791F','#7A4EA3'];
 const MULTI = '複数の課';
 const fmt = n => n.toLocaleString('ja-JP');
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const norm = s => s.normalize('NFKC').toLowerCase().replace(/\s+/g, '');
 const sum = a => a.reduce((s, x) => s + x.amount, 0);
-const TOTAL = sum(IT);
 const pcol = no => PCOL[(no - 1) % PCOL.length];
 const pname = no => (B.pillars.find(p => p.no === no) || {}).name || '';
-IT.forEach((it, i) => { it._i = i; it._hay = norm([it.name, it.desc, it.details.join(' '), it.dept.join(' ')].join(' ')); });
+const Y = {}; YEARS.forEach(y => { Y[y.fy] = y; });
+const townPage = y => 'https://www.town.shiga-hino.lg.jp/' + String(y.source.page_id).padStart(10, '0') + '.html';
+const ymd = s => { const a = s.split('-').map(Number); return a[0] + '年' + a[1] + '月' + a[2] + '日'; };
+/* 増減の書き方（DESIGN-portal-draft.md 3.3。矢印と文言。色は付けない） */
+const diffText = (cur, prev) => prev == null ? '－' : cur > prev ? '▲ ' + fmt(cur - prev) + '千円 増' : cur < prev ? '▼ ' + fmt(prev - cur) + '千円 減' : '＝ 同額';
+ALL.forEach((it, i) => { it._i = i; it._hay = norm([it.name, it.desc, it.details.join(' '), it.dept.join(' ')].join(' ')); });
+/* 年度をまたぐ束（chain 番号 → 年度ごとの事業） */
+const CH = {};
+ALL.forEach(it => { (CH[it.chain] = CH[it.chain] || {})[it.fy] = it; });
 
-/* KPI */
-const nNew = IT.filter(it => it.kubun.includes('新規')).length;
-const nUp = IT.filter(it => it.kubun.includes('拡充')).length;
-const nBoth = IT.filter(it => it.kubun.includes('新規') && it.kubun.includes('拡充')).length;
-document.getElementById('kN').innerHTML = fmt(IT.length) + '<small>件</small>';
-document.getElementById('kAmt').innerHTML = fmt(TOTAL) + '<small>千円</small>';
-document.getElementById('kNew').innerHTML = fmt(nNew) + '<small>件</small>';
-document.getElementById('kUp').innerHTML = fmt(nUp) + '<small>件</small>';
-const T = B.totals, TS = T.source, TURL = TS.url + '#page=' + TS.pdf_page;
-const accText = T.accounts.map(a => a.name + ' ' + fmt(a.amount) + '千円').join('・');
-document.getElementById('kAmtSub').textContent = '附表の事業の予算額の合計。当初予算の総額は ' + fmt(T.total) + '千円';
-document.getElementById('heroTotals').innerHTML = '令和8年度当初予算の総額は ' + fmt(T.total) + '千円（' + esc(accText) + '）です（<a href="' + esc(TURL) + '" target="_blank" rel="noopener">「' + esc(TS.title) + '」' + TS.printed_page + 'ページ</a>）。';
-if (nBoth) document.getElementById('kUpSub').textContent = '「拡充」の印がある事業。新規と拡充の両方の印がある' + nBoth + '件は、両方に数えています';
+/* 年度の選択（既定は最新の年度） */
+let FY = YEARS[YEARS.length - 1].fy;
+let IT = [], TOTAL = 0, KAN = [], DEPT = [], PL = [];
+const state = {q: '', pillar: '', kan: '', dept: '', kubun: '', sort: 'amt'};
+let plMode = 'amt';
+const yearsBox = document.getElementById('years');
+yearsBox.insertAdjacentHTML('beforeend', YEARS.map(y => '<button type="button" data-fy="' + y.fy + '" aria-pressed="false">' + esc(y.label) + '</button>').join(''));
+yearsBox.addEventListener('click', e => {
+  const b = e.target.closest('[data-fy]'); if (!b) return;
+  FY = Number(b.dataset.fy);
+  selectYear();
+});
+
+function selectYear(){
+  const yr = Y[FY];
+  yearsBox.querySelectorAll('[data-fy]').forEach(b => { const on = Number(b.dataset.fy) === FY; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on); });
+  IT = ALL.filter(it => it.fy === FY);
+  TOTAL = sum(IT);
+  /* KPI */
+  const nNew = IT.filter(it => it.kubun.includes('新規')).length;
+  const nUp = IT.filter(it => it.kubun.includes('拡充')).length;
+  const nBoth = IT.filter(it => it.kubun.includes('新規') && it.kubun.includes('拡充')).length;
+  document.getElementById('kNLabel').textContent = yr.label + 'の附表に載った事業';
+  document.getElementById('kN').innerHTML = fmt(IT.length) + '<small>件</small>';
+  document.getElementById('kAmt').innerHTML = fmt(TOTAL) + '<small>千円</small>';
+  document.getElementById('kNew').innerHTML = fmt(nNew) + '<small>件</small>';
+  document.getElementById('kUp').innerHTML = fmt(nUp) + '<small>件</small>';
+  const T = yr.totals, TS = T.source, TURL = TS.url + '#page=' + TS.pdf_page;
+  const accText = T.accounts.map(a => a.name + ' ' + fmt(a.amount) + '千円').join('・');
+  document.getElementById('kAmtSub').textContent = '附表の事業の予算額の合計。当初予算の総額は ' + fmt(T.total) + '千円';
+  document.getElementById('kUpSub').textContent = nBoth ? '「拡充」の印がある事業。新規と拡充の両方の印がある' + nBoth + '件は、両方に数えています' : '附表で「拡充」の印がある事業';
+  document.getElementById('heroNote').innerHTML = '当初予算の附表「' + esc(yr.label) + 'に取り組む主な事業」に載った事業だけを集計したもので、町の予算の全体ではありません。' +
+    esc(yr.label) + '当初予算の総額は ' + fmt(T.total) + '千円（' + esc(accText) + '）です（<a href="' + esc(TURL) + '" target="_blank" rel="noopener">「' + esc(TS.title) + '」' + TS.printed_page + 'ページ</a>）。';
+  /* 見出し */
+  document.getElementById('plH2').textContent = '柱別（' + yr.label + '）';
+  document.getElementById('bdH2').textContent = '款別・担当課別（' + yr.label + '）';
+  document.getElementById('listH2').textContent = '事業の一覧（' + yr.label + '）';
+  /* 集計 */
+  KAN = group(it => it.kan);
+  DEPT = group(it => it.dept.length > 1 ? MULTI : it.dept[0]);
+  PL = B.pillars.map(p => { const a = IT.filter(it => it.pillar === p.no); return {no: p.no, name: p.name, n: a.length, amt: sum(a)}; });
+  table('tKan', '款', KAN);
+  table('tDept', '担当課', DEPT);
+  const multi = IT.filter(it => it.dept.length > 1);
+  document.getElementById('deptNote').textContent = multi.length ? '「' + MULTI + '」は、担当課が2つ以上ある事業です（' +
+    multi.map(it => it.name + '：' + it.dept.join('・')).join('／') + '）。課ごとの金額の内訳は附表に無いため、課ごとの行には数えていません。一覧を担当課で絞り込むと、それぞれの課の事業として表示します。' : '';
+  /* 絞り込みの選択肢（柱の選択は保ち、款・担当課は年度ごとに作り直す） */
+  document.getElementById('fPillar').innerHTML = opt('', 'すべて') + B.pillars.map(p => opt(p.no, '柱' + p.no + ' ' + p.name)).join('');
+  document.getElementById('fPillar').value = state.pillar;
+  document.getElementById('fKan').innerHTML = opt('', 'すべて') + KAN.map(g => opt(g.name, g.name)).join('');
+  const deptAll = [...new Set(IT.flatMap(it => it.dept))];
+  const deptN = d => IT.filter(it => it.dept.includes(d)).length;
+  deptAll.sort((a, b) => deptN(b) - deptN(a) || a.localeCompare(b, 'ja'));
+  document.getElementById('fDept').innerHTML = opt('', 'すべて') + deptAll.map(d => opt(d, d)).join('');
+  if (!KAN.some(g => g.name === state.kan)) state.kan = '';
+  if (!deptAll.includes(state.dept)) state.dept = '';
+  document.getElementById('fKan').value = state.kan;
+  document.getElementById('fDept').value = state.dept;
+  render();
+}
 
 /* 集計 */
 function group(keyFn){
@@ -294,23 +428,18 @@ function group(keyFn){
   IT.forEach(it => { const k = keyFn(it); const g = m.get(k) || {name: k, n: 0, amt: 0}; g.n++; g.amt += it.amount; m.set(k, g); });
   return [...m.values()].sort((a, b) => b.amt - a.amt || b.n - a.n || a.name.localeCompare(b.name, 'ja'));
 }
-const KAN = group(it => it.kan);
-const DEPT = group(it => it.dept.length > 1 ? MULTI : it.dept[0]);
 
 /* 柱別 */
-let plMode = 'amt';
-const state = {q: '', pillar: '', kan: '', dept: '', kubun: '', sort: 'amt'};
-const PL = B.pillars.map(p => { const a = IT.filter(it => it.pillar === p.no); return {no: p.no, name: p.name, n: a.length, amt: sum(a)}; });
 function drawPillars(){
   const max = Math.max(...PL.map(p => plMode === 'amt' ? p.amt : p.n));
   document.getElementById('pls').innerHTML = PL.map(p => {
     const v = plMode === 'amt' ? p.amt : p.n, on = String(p.no) === state.pillar;
     return '<button type="button" class="pl' + (on ? ' is-on' : '') + '" data-no="' + p.no + '" aria-pressed="' + on + '">' +
       '<span class="pl-name"><span style="background:' + pcol(p.no) + '">柱' + p.no + '</span>' + esc(p.name) + '</span>' +
-      '<span class="bar" aria-hidden="true"><i style="width:' + (v / max * 100).toFixed(2) + '%;background:' + pcol(p.no) + '"></i></span>' +
+      '<span class="bar" aria-hidden="true"><i style="width:' + (max ? (v / max * 100).toFixed(2) : 0) + '%;background:' + pcol(p.no) + '"></i></span>' +
       '<span class="pl-val"><b>' + fmt(p.amt) + '</b> 千円・' + p.n + '件</span></button>';
   }).join('');
-  document.getElementById('plTitle').textContent = plMode === 'amt' ? '柱ごとの予算額' : '柱ごとの件数';
+  document.getElementById('plTitle').textContent = (plMode === 'amt' ? '柱ごとの予算額' : '柱ごとの件数') + '（' + Y[FY].label + '）';
 }
 document.getElementById('pls').addEventListener('click', e => {
   const b = e.target.closest('.pl'); if (!b) return;
@@ -325,6 +454,59 @@ document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => {
   drawPillars();
 });
 
+/* 柱ごとの推移（折れ線。柱ごとに1枚、縦軸は共通） */
+const PT = B.pillars.map(p => ({no: p.no, name: p.name, v: YEARS.map(y => sum(ALL.filter(it => it.fy === y.fy && it.pillar === p.no)))}));
+const TMAX = Math.max(...PT.flatMap(p => p.v));
+const YMAX = Math.ceil(TMAX / 1000000) * 1000000;       // 10億円の目盛りに切り上げ
+const OKU = n => (n / 100000).toFixed(1);                // 千円 → 億円（小数1桁）
+const SHAPES = ['circle', 'square', 'diamond', 'triangle', 'cross'];  // 点の形（柱ごと）
+function shape(kind, x, y, r, col){
+  if (kind === 'circle') return '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" fill="' + col + '"/>';
+  if (kind === 'square') return '<rect x="' + (x - r) + '" y="' + (y - r) + '" width="' + 2 * r + '" height="' + 2 * r + '" fill="' + col + '"/>';
+  if (kind === 'diamond') return '<path d="M' + x + ' ' + (y - r * 1.3) + 'L' + (x + r * 1.3) + ' ' + y + 'L' + x + ' ' + (y + r * 1.3) + 'L' + (x - r * 1.3) + ' ' + y + 'Z" fill="' + col + '"/>';
+  if (kind === 'triangle') return '<path d="M' + x + ' ' + (y - r * 1.3) + 'L' + (x + r * 1.2) + ' ' + (y + r) + 'L' + (x - r * 1.2) + ' ' + (y + r) + 'Z" fill="' + col + '"/>';
+  return '<path d="M' + (x - r) + ' ' + (y - r) + 'L' + (x + r) + ' ' + (y + r) + 'M' + (x - r) + ' ' + (y + r) + 'L' + (x + r) + ' ' + (y - r) + '" stroke="' + col + '" stroke-width="2.5" fill="none"/>';
+}
+function lineSvg(p, W){
+  const H = 190, L = 40, R = 14, T = 24, Bm = 30, pw = W - L - R, ph = H - T - Bm;
+  const pad = W < 400 ? 14 : 22;  // 最初と最後の点を軸から離す（値の文字が目盛りと重ならないように）
+  const x = i => L + pad + (YEARS.length === 1 ? (pw - 2 * pad) / 2 : (pw - 2 * pad) * i / (YEARS.length - 1));
+  const y = v => T + ph - ph * v / YMAX;
+  const col = pcol(p.no), kind = SHAPES[(p.no - 1) % SHAPES.length];
+  let s = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" role="img" aria-label="柱' + p.no + ' ' + esc(p.name) + 'の事業費の推移（令和3〜8年度）。' +
+    YEARS.map((yr, i) => yr.label + ' ' + fmt(p.v[i]) + '千円').join('、') + '。数値の表は下にあります"><title>柱' + p.no + ' ' + esc(p.name) + 'の事業費の推移</title>';
+  for (let t = 0; t <= YMAX; t += 1000000) {
+    s += '<line class="grid" x1="' + L + '" x2="' + (W - R) + '" y1="' + y(t) + '" y2="' + y(t) + '"/>' +
+      '<text class="tick" x="' + (L - 6) + '" y="' + (y(t) + 4) + '" text-anchor="end">' + (t / 100000) + '</text>';
+  }
+  s += '<text class="tick" x="' + (L - 6) + '" y="' + (T - 10) + '" text-anchor="end">億円</text>';
+  s += '<line class="axis" x1="' + L + '" x2="' + (W - R) + '" y1="' + y(0) + '" y2="' + y(0) + '"/>';
+  s += '<polyline fill="none" stroke="' + col + '" stroke-width="2" points="' + p.v.map((v, i) => x(i) + ',' + y(v)).join(' ') + '"/>';
+  p.v.forEach((v, i) => {
+    s += shape(kind, x(i), y(v), 4.5, col);
+    s += '<text class="val" x="' + x(i) + '" y="' + (y(v) - 9) + '" text-anchor="middle">' + OKU(v) + '</text>';
+    s += '<text class="tick" x="' + x(i) + '" y="' + (H - 8) + '" text-anchor="middle">' + (i === 0 ? '令和' : '') + YEARS[i].fy + '</text>';
+  });
+  return s + '</svg>';
+}
+function drawTrend(){
+  const cards = document.getElementById('trendCards');
+  if (!cards.children.length) cards.innerHTML = PT.map(p => '<div class="trend-card"><h4><span class="pno" style="background:' + pcol(p.no) + '">柱' + p.no + '</span>' + esc(p.name) + '</h4><div class="svgbox" data-no="' + p.no + '"></div></div>').join('');
+  cards.querySelectorAll('.svgbox').forEach(box => {
+    const W = Math.max(240, Math.floor(box.clientWidth));
+    box.innerHTML = lineSvg(PT.find(p => p.no === Number(box.dataset.no)), W);
+  });
+}
+let rt;
+window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawTrend, 120); });
+(function(){
+  const t = document.getElementById('tTrend');
+  t.querySelector('thead').innerHTML = '<tr><th scope="col">柱</th>' + YEARS.map(y => '<th scope="col">' + esc(y.label) + '</th>').join('') + '</tr>';
+  t.querySelector('tbody').innerHTML = PT.map(p => '<tr><th scope="row">柱' + p.no + ' ' + esc(p.name) + '</th>' + p.v.map(v => '<td>' + fmt(v) + '</td>').join('') + '</tr>').join('') +
+    '<tr class="total"><th scope="row">合計</th>' + YEARS.map((y, i) => '<td>' + fmt(PT.reduce((s, p) => s + p.v[i], 0)) + '</td>').join('') + '</tr>' +
+    '<tr><th scope="row">事業数</th>' + YEARS.map(y => '<td>' + fmt(ALL.filter(it => it.fy === y.fy).length) + '件</td>').join('') + '</tr>';
+})();
+
 /* 款別・担当課別 */
 function table(id, head, rows){
   const t = document.getElementById(id);
@@ -332,30 +514,47 @@ function table(id, head, rows){
   t.querySelector('tbody').innerHTML = rows.map(g => '<tr><th scope="row">' + esc(g.name) + '</th><td>' + fmt(g.n) + '</td><td>' + fmt(g.amt) + '</td></tr>').join('') +
     '<tr class="total"><th scope="row">合計</th><td>' + fmt(IT.length) + '</td><td>' + fmt(TOTAL) + '</td></tr>';
 }
-table('tKan', '款', KAN);
-table('tDept', '担当課', DEPT);
-const multi = IT.filter(it => it.dept.length > 1);
-document.getElementById('deptNote').textContent = multi.length ? '「' + MULTI + '」は、担当課が2つ以上ある事業です（' +
-  multi.map(it => it.name + '：' + it.dept.join('・')).join('／') + '）。課ごとの金額の内訳は附表に無いため、課ごとの行には数えていません。一覧を担当課で絞り込むと、それぞれの課の事業として表示します。' : '';
 
-/* 一覧の絞り込みの選択肢 */
+/* 一覧 */
 const opt = (v, t) => '<option value="' + esc(v) + '">' + esc(t) + '</option>';
-document.getElementById('fPillar').innerHTML = opt('', 'すべて') + B.pillars.map(p => opt(p.no, '柱' + p.no + ' ' + p.name)).join('');
-document.getElementById('fKan').innerHTML = opt('', 'すべて') + KAN.map(g => opt(g.name, g.name)).join('');
-const deptAll = [...new Set(IT.flatMap(it => it.dept))];
-const deptN = d => IT.filter(it => it.dept.includes(d)).length;
-deptAll.sort((a, b) => deptN(b) - deptN(a) || a.localeCompare(b, 'ja'));
-document.getElementById('fDept').innerHTML = opt('', 'すべて') + deptAll.map(d => opt(d, d)).join('');
-
 const PLAN_PAGE = SITES.plans + 'plans/' + B.plan.id + '.html';
+function chainHtml(it){
+  const c = CH[it.chain];
+  const present = YEARS.filter(y => c[y.fy]);
+  const max = Math.max(...present.map(y => c[y.fy].amount));
+  const names = new Set(present.map(y => c[y.fy].name));
+  let prev = null;
+  const rows = YEARS.map(y => {
+    const o = c[y.fy];
+    const cur = y.fy === FY;
+    let r;
+    if (!o) {
+      r = '<tr' + (cur ? ' class="is-on"' : '') + '><th scope="row">' + esc(y.label) + '</th><td class="txt none">附表に無い</td><td class="none">－</td><td class="none">－</td><td class="none">－</td></tr>';
+      prev = null;
+    } else {
+      r = '<tr' + (cur ? ' class="is-on"' : '') + '><th scope="row">' + esc(y.label) + '</th><td class="txt">' + esc(o.name) + '</td><td>柱' + o.pillar + '</td>' +
+        '<td><span class="cbar" aria-hidden="true"><i style="width:' + (max ? (o.amount / max * 100).toFixed(1) : 0) + '%"></i></span>' + fmt(o.amount) + '</td><td>' + diffText(o.amount, prev) + '</td></tr>';
+      prev = o.amount;
+    }
+    return r;
+  }).join('');
+  return '<h4>年度ごとの予算額' + (names.size > 1 ? '（名前が変わった事業。各年度の名前を併記）' : '') + '</h4>' +
+    '<div class="table-wrap"><table class="chain"><thead><tr><th scope="col">年度</th><th scope="col">附表の事業名</th><th scope="col">柱</th><th scope="col">予算額（千円）</th><th scope="col">前年度との差</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
+    '<p class="src-note">「附表に無い」は、その年度の附表に載っていないことを示すもので、予算が無かったとは限りません。前の年度が附表に無いときの差は「－」です。年度をまたぐ対応は、hino-ronten の台帳（links/fuhyo-years.tsv）で人が確かめたものです。</p>';
+}
 function itemHtml(it){
+  const yr = Y[it.fy];
   const tags = it.kubun.map(k => '<span class="tag ' + (k === '新規' ? 'new' : 'up') + '">' + esc(k) + '</span>').join('');
-  const url = B.source.url + '#page=' + it.page;
-  const js = it.jisshi.length
-    ? it.jisshi.map(j => esc(j.key) + ' ' + esc(j.name)).join('<br>') + '<br><a href="' + esc(PLAN_PAGE) + '" target="_blank" rel="noopener">' + esc(B.plan.name) + 'のページ</a>'
-    : '対応する事業はありません（記載なし）';
+  const nyrs = Object.keys(CH[it.chain]).length;
+  const url = yr.source.url + '#page=' + it.page;
+  let js = '';
+  if (it.jisshi) {
+    js = '<dt>実施計画の事業</dt><dd>' + (it.jisshi.length
+      ? it.jisshi.map(j => esc(j.key) + ' ' + esc(j.name)).join('<br>') + '<br><a href="' + esc(PLAN_PAGE) + '" target="_blank" rel="noopener">' + esc(B.plan.name) + 'のページ</a>'
+      : '対応する事業はありません（記載なし）') + '</dd>';
+  }
   return '<details class="item"><summary>' +
-    '<span class="it-name">' + esc(it.name) + tags + '</span>' +
+    '<span class="it-name">' + esc(it.name) + tags + (nyrs > 1 ? '<span class="tag yrs">' + nyrs + '年度</span>' : '') + '</span>' +
     '<span class="it-amt">' + fmt(it.amount) + '<small>千円</small></span>' +
     '<span class="it-meta">柱' + it.pillar + '・' + esc(it.kan) + '・' + esc(it.dept.join('・')) + '</span>' +
     '</summary><div class="it-body">' +
@@ -367,9 +566,8 @@ function itemHtml(it){
     '<dt>款</dt><dd>' + esc(it.kan) + '</dd>' +
     '<dt>柱</dt><dd>柱' + it.pillar + ' ' + esc(pname(it.pillar)) + '</dd>' +
     '<dt>区分</dt><dd>' + (it.kubun.length ? esc(it.kubun.join('・')) : '印なし') + '</dd>' +
-    '<dt>原典のページ</dt><dd><a href="' + esc(url) + '" target="_blank" rel="noopener">附表 ' + it.page + 'ページ（PDF）</a></dd>' +
-    '<dt>実施計画の事業</dt><dd>' + js + '</dd>' +
-    '</dl></div></details>';
+    '<dt>原典のページ</dt><dd><a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(yr.label) + 'の附表 ' + it.page + 'ページ（PDF）</a></dd>' +
+    js + '</dl>' + chainHtml(it) + '</div></details>';
 }
 
 function render(){
@@ -384,7 +582,7 @@ function render(){
   document.getElementById('items').innerHTML = a.length ? a.map(itemHtml).join('') : '<p class="empty">条件に合う事業はありません。</p>';
   const any = state.q || state.pillar || state.kan || state.dept || state.kubun;
   document.getElementById('count').innerHTML = '<b>' + fmt(a.length) + '</b>件・予算額の計 <b>' + fmt(sum(a)) + '</b> 千円' +
-    (any ? '（全' + IT.length + '件のうち）<button type="button" class="reset" id="reset">条件を解除</button>' : '');
+    (any ? '（' + esc(Y[FY].label) + 'の全' + IT.length + '件のうち）<button type="button" class="reset" id="reset">条件を解除</button>' : '');
   if (any) document.getElementById('reset').onclick = () => {
     Object.assign(state, {q: '', pillar: '', kan: '', dept: '', kubun: ''});
     ['fQ', 'fPillar', 'fKan', 'fDept', 'fKubun'].forEach(id => document.getElementById(id).value = '');
@@ -400,22 +598,56 @@ document.querySelectorAll('[data-sort]').forEach(b => b.onclick = () => {
   document.querySelectorAll('[data-sort]').forEach(x => { const on = x === b; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on); });
   render();
 });
-render();
+
+/* 予算の規模（6年） */
+(function(){
+  const t = document.getElementById('tTotals');
+  const names = YEARS[0].totals.accounts.map(a => a.name);
+  t.querySelector('thead').innerHTML = '<tr><th scope="col">年度</th>' + names.map(n => '<th scope="col">' + esc(n) + '</th>').join('') + '<th scope="col">合計</th><th scope="col">合計の前年度との差</th><th scope="col">出典</th></tr>';
+  let prev = null;
+  t.querySelector('tbody').innerHTML = YEARS.map(y => {
+    const T = y.totals, S = T.source;
+    const r = '<tr><th scope="row">' + esc(y.label) + '</th>' + T.accounts.map(a => '<td>' + fmt(a.amount) + '</td>').join('') + '<td><b>' + fmt(T.total) + '</b></td><td>' + diffText(T.total, prev) + '</td>' +
+      '<td class="txt"><a href="' + esc(S.url + '#page=' + S.pdf_page) + '" target="_blank" rel="noopener">「' + esc(S.title) + '」' + S.printed_page + 'ページ（PDF）</a></td></tr>';
+    prev = T.total;
+    return r;
+  }).join('');
+  const notes = [...new Set(YEARS.flatMap(y => y.totals.accounts.filter(a => a.note).map(a => a.note.replace(/^[（(]?※[０-９0-9]*[）)]?/, ''))))];
+  document.getElementById('totalsNote').textContent = '各年度の「予算の規模」の表の注：' + notes.join('／') + '。令和3年度の前年度との差は、この表に令和2年度が無いため「－」です。資料の取得日は ' +
+    [...new Set(YEARS.map(y => y.totals.source.fetched))].map(ymd).join('・') + '。';
+})();
+
+/* 原典との照合（年度ごと） */
+(function(){
+  const t = document.getElementById('tShogo');
+  const k = v => fmt(v) + '件';
+  t.querySelector('thead').innerHTML = '<tr><th scope="col">年度</th><th scope="col">照合の対象</th><th scope="col">済み</th><th scope="col">済んでいないもの</th><th scope="col">人の抜き取り（済み／対象）</th><th scope="col">段3の指摘のうち未判断</th><th scope="col">記録の最終日</th><th scope="col">台帳</th></tr>';
+  t.querySelector('tbody').innerHTML = YEARS.map(y => {
+    const A = y.audit, I = y.issues;
+    const parts = [['プログラム ', A.a], ['AI（2回）', A.b], ['人 ', A.c]].filter(p => p[1]).map(p => p[0] + k(p[1])).join('／');
+    const why = A.u ? k(A.u) + '<br>' + A.reasons.map(r => esc(r[0]) + '：' + k(r[1]) + (r[2] ? '（人が確かめます）' : '')).join('<br>') : 'なし';
+    return '<tr><th scope="row">' + esc(y.label) + '</th><td>' + k(A.n) + '</td><td class="txt">' + k(A.m) + (parts ? '<br><small>' + parts + '</small>' : '') + '</td>' +
+      '<td class="txt">' + why + '</td><td>' + (A.f ? k(A.x) + '／' + k(A.f) : '対象なし') + '</td><td>' + k(I.pending) + '<br><small>（指摘 ' + k(I.rows) + '）</small></td>' +
+      '<td>' + (A.last ? ymd(A.last) : '－') + '</td><td class="txt"><a href="https://github.com/kken78/shiga-hino-plans/blob/main/data/audit_log/fuhyo-r' + y.fy + '.tsv" target="_blank" rel="noopener">照合の記録</a>・<a href="https://github.com/kken78/shiga-hino-plans/blob/main/data/source_issues/fuhyo-r' + y.fy + '.tsv" target="_blank" rel="noopener">段3の指摘</a></td></tr>';
+  }).join('');
+})();
 
 /* データについて */
-const S = B.source, A = B.audit;
-const fetched = S.fetched.split('-').map(Number);
-document.getElementById('srcText').innerHTML = '日野町「<a href="https://www.town.shiga-hino.lg.jp/0000008534.html" target="_blank" rel="noopener">令和8年度予算</a>」のページに載っている「令和8年度当初予算の概要」の附表「<a href="' + esc(S.url) + '" target="_blank" rel="noopener">令和8年度に取り組む主な事業</a>」（PDF。' + fetched[0] + '年' + fetched[1] + '月' + fetched[2] + '日に取得）。';
-document.getElementById('auditText').textContent = '附表の各事業の予算額・款・担当課・区分と、柱ごとの事業数・区分の印がある事業数（計' + fmt(A.rows) +
-  '行）を、原典の PDF の表の行・列と照らして、すべて一致することを確認しています（shiga-hino-plans の検収の台帳）。内訳は、PDF の文字による機械の照合 ' + fmt(A.pdftext) +
-  '行、AI 2人によるページの画像での照合 ' + fmt(A.ai) + '行、人による確認 ' + fmt(A.human) + '行です。';
-const tf = TS.fetched.split('-').map(Number);
-document.getElementById('totalsText').innerHTML = '当初予算の総額（' + fmt(T.total) + '千円）と会計ごとの額は、同じページの「<a href="' + esc(TURL) + '" target="_blank" rel="noopener">' + esc(TS.title) + '</a>」（PDF。' + tf[0] + '年' + tf[1] + '月' + tf[2] + '日に取得）の' + TS.printed_page + 'ページ「予算の規模」の表から転記しています（' + esc(accText) + '）。' +
-  T.accounts.filter(a => a.note).map(a => esc(a.note) + 'です。').join('') + '附表の事業には、一般会計から特別会計・企業会計への繰出金も含まれます。';
-const nLinked = IT.filter(it => it.jisshi.length).length;
-document.getElementById('linkText').textContent = '各事業に対応する「' + B.plan.name + '」の事業は、hino-ronten の台帳（links/fuhyo.tsv）で人が確認したもの（confirmed）だけを載せています。' +
-  fmt(nLinked) + '件は実施計画の事業に対応し、' + fmt(IT.length - nLinked) + '件は対応する事業が実施計画に無いこと（記載なし）を確認しています。e番号は、shiga-hino-plans が実施計画の事業に付けた識別子で、原典の番号ではありません。';
+document.getElementById('srcList').innerHTML = YEARS.map(y => {
+  const S = y.source;
+  return '<li>' + esc(y.label) + '：「<a href="' + esc(townPage(y)) + '" target="_blank" rel="noopener">' + esc(y.label) + '予算</a>」のページの附表「<a href="' + esc(S.url) + '" target="_blank" rel="noopener">' + esc(y.label) + 'に取り組む主な事業</a>」（PDF。' + ymd(S.fetched) + 'に取得）</li>';
+}).join('');
+const C = B.chains;
+document.getElementById('chainText').textContent = '同じ事業を年度をまたいでつなぐ対応は、hino-ronten の台帳（links/fuhyo-years.tsv）によります。つながりは ' + fmt(C.name + C.manual) + '行（事業名が同じもの ' + fmt(C.name) + '行、名前が変わった事業を両年度の概要を比べて人がつないだもの ' + fmt(C.manual) + '行）で、' +
+  fmt(ALL.length) + '件の事業を ' + fmt(C.n) + '本に束ねています。6年度すべてに載る事業は ' + fmt(Object.values(CH).filter(c => Object.keys(c).length === YEARS.length).length) + '本、1年度だけの事業は ' + fmt(Object.values(CH).filter(c => Object.keys(c).length === 1).length) + '本です。';
+const L8 = ALL.filter(it => it.fy === B.plan.fy);
+const nLinked = L8.filter(it => it.jisshi && it.jisshi.length).length;
+document.getElementById('linkText').textContent = '令和' + B.plan.fy + '年度の各事業に対応する「' + B.plan.name + '」の事業は、hino-ronten の台帳（links/fuhyo.tsv）で人が確認したもの（confirmed）だけを載せています。' +
+  fmt(nLinked) + '件は実施計画の事業に対応し、' + fmt(L8.length - nLinked) + '件は対応する事業が実施計画に無いこと（記載なし）を確認しています。e番号は、shiga-hino-plans が実施計画の事業に付けた識別子で、原典の番号ではありません。令和3〜7年度の附表と実施計画の対応は、まだ作っていません。';
 document.getElementById('inputsText').innerHTML = B.inputs.map(x => '<a href="https://github.com/' + esc(x.repo) + '/tree/' + esc(x.commit) + '" target="_blank" rel="noopener">' + esc(x.repo.split('/')[1]) + ' ' + esc(x.commit.slice(0, 7)) + '</a>').join('<br>');
+
+selectYear();
+drawTrend();
 </script>
 </body>
 </html>
