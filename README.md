@@ -56,10 +56,10 @@ https://kken78.github.io/hino-budget/
 
 ### 検収の状況を出し直すとき
 
-令和3〜7年度の附表は、2026年11月6日の時点で、段4（人の抜き取り）と段3の指摘の判断が済んでいません。画面の「原典との照合」は、台帳のその時点の数（抜き取り 0件、段3の未判断 11〜20件）をそのまま出しています。shiga-hino-plans で判断が済んだら、次の手順で出し直します。
+令和3〜7年度の附表の段4（人の抜き取り）と段3の指摘の判断は、2026年11月6日に済み、同じ日に lock を上げて画面の「原典との照合」を出し直しました（5年度とも、抜き取りが対象と同じ数、段3の未判断 0件）。shiga-hino-plans の検収が進んだときは、次の手順で出し直します。
 
 1. `git -C ../shiga-hino-plans pull` で、判断を取り込んだ版にする。`python3 ../shiga-hino-plans/tools/audit_autocheck.py fuhyo-r3 --status`（r4〜r7 も同じ）が「完了」になっていることを見る。
-2. `inputs.lock.json` の shiga-hino-plans の行（20ファイル）の commit と sha256 を書き換える。附表の JSON を直していれば `data/fuhyo/fuhyo-r<n>.json` の sha256 も変わる。
+2. `inputs.lock.json` の shiga-hino-plans の行（20ファイル）の commit と sha256 を書き換える。附表の JSON を直していれば `data/fuhyo/fuhyo-r<n>.json` の sha256 も変わる。附表の JSON の任意の項目 `sic`（読みの注。PLAN_SCHEMA §9）は `tools/build_data.py` が形だけ確かめて読み飛ばし、画面には出さない。
 3. `python3 tools/build_data.py` を実行する。検収の台帳の表示で、人の抜き取りの「済み」が対象と同じ数になり、段3の未判断が 0 になることを確かめる。附表の JSON が直っていれば、事業数・予算額の合計も変わるので、`tools/build_data.py` の `EXPECTED_ITEMS` を原典で確かめた数に直す。
 4. `inputs.lock.json` と `data.js` を同じコミットにして、作業ブランチから PR を作る。
 

@@ -137,6 +137,8 @@ def norm(s):  # LINK_SCHEMA §4
 # 2. 附表 -----------------------------------------------------------------------
 FIELDS = {'key': str, 'kubun': list, 'kan': str, 'name': str, 'desc': str,
           'details': list, 'amount': int, 'dept': list, 'page': int}
+# 任意の項目。読みの注（PLAN_SCHEMA §9 の sic。原典の誤字の箇所と正しい読み）。画面には出さず、本文は原典のまま。
+OPTIONAL_FIELDS = {'sic'}
 fuhyo = {}       # 年度 → JSON
 items = {}       # 年度 → [(柱, 事業)]
 F = {}           # 年度 → {key: 事業}
@@ -156,9 +158,13 @@ for y in YEARS:
             errors.append(f'附表 r{y}: 柱の no・name の形が違う: {p.get("no")!r}')
         names.append((p.get('no'), p.get('name')))
         for it in p['items']:
-            if set(it) != set(FIELDS):
-                errors.append(f"附表 r{y}: {it.get('key')} の項目が違う: {sorted(set(it) ^ set(FIELDS))}")
+            if set(it) - OPTIONAL_FIELDS != set(FIELDS):
+                errors.append(f"附表 r{y}: {it.get('key')} の項目が違う: {sorted((set(it) - OPTIONAL_FIELDS) ^ set(FIELDS))}")
                 continue
+            if 'sic' in it and not (isinstance(it['sic'], list) and all(
+                    isinstance(x, dict) and isinstance(x.get('text'), str) and x.get('field') in ('name', 'desc', 'details')
+                    for x in it['sic'])):
+                errors.append(f"附表 r{y}: {it['key']} の sic の形が違う")
             for k, t in FIELDS.items():
                 if not isinstance(it[k], t) or (t is int and isinstance(it[k], bool)):
                     errors.append(f"附表 r{y}: {it['key']} の {k} の型が違う")
