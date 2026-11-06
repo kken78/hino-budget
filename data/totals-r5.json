@@ -1,0 +1,20 @@
+{
+  "note": "令和5年度当初予算の会計ごとの予算規模。原典の「３．予算の規模」の表から転記した（千円）。原典は hino-town-docs の台帳（data/sources.tsv の yosan-r5-gaiyou）の url から取得した。令和5年度は、企業会計の内訳の表に「（※２）令和5年度は、旧簡易水道特別会計を統合している。」「（※３）令和5年度は、旧農業集落排水事業特別会計を統合している。」の注がある。",
+  "source": {
+    "title": "令和5年度当初予算案の概要",
+    "docs_id": "yosan-r5-gaiyou",
+    "url": "https://www.town.shiga-hino.lg.jp/cmsfiles/contents/0000006/6959/R5giunsiri.pdf",
+    "bytes": 920290,
+    "sha256": "7ef4e5a7d4c588ac25991f4fabe8cc8ad57933937f060091d9b3a2cfebbb0d63",
+    "pdf_page": 4,
+    "printed_page": 3,
+    "fetched": "2026-11-06"
+  },
+  "unit": "千円",
+  "accounts": [
+    {"name": "一般会計", "amount": 9544000},
+    {"name": "特別会計", "amount": 4925888},
+    {"name": "企業会計", "amount": 2484970, "note": "（※１）企業会計は収益的支出および資本的支出の合計額"}
+  ],
+  "total": {"name": "合計", "amount": 16954858}
+}

@@ -1,0 +1,20 @@
+{
+  "note": "令和7年度当初予算の会計ごとの予算規模。原典の「３．予算の規模」の表から転記した（千円）。原典は hino-town-docs の台帳（data/sources.tsv の yosan-r7-gaiyou）の url から取得した。",
+  "source": {
+    "title": "令和7年度当初予算の概要",
+    "docs_id": "yosan-r7-gaiyou",
+    "url": "https://www.town.shiga-hino.lg.jp/cmsfiles/contents/0000008/8184/R7.gaiyou.pdf",
+    "bytes": 1239187,
+    "sha256": "8815023e5df86624c0628c2bc3015c1cd8153a7d6a0edd3cde53d1a536eb7e57",
+    "pdf_page": 4,
+    "printed_page": 3,
+    "fetched": "2026-11-06"
+  },
+  "unit": "千円",
+  "accounts": [
+    {"name": "一般会計", "amount": 10650000},
+    {"name": "特別会計", "amount": 4656011},
+    {"name": "企業会計", "amount": 2285812, "note": "（※１）企業会計は収益的支出および資本的支出の合計額"}
+  ],
+  "total": {"name": "合計", "amount": 17591823}
+}
