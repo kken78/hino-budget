@@ -1,35 +1,143 @@
 {
-  "note": "tools/build_data.py が読む材料。各リポジトリを git pull したあとの HEAD で固定した（2026-11-05）。材料は、このリポジトリと同じフォルダに置いた各リポジトリから読む。",
+  "note": "tools/build_data.py が読む材料。各リポジトリを git pull したあとの HEAD で固定した（2026-11-06）。材料は、このリポジトリと同じフォルダに置いた各リポジトリから読む。",
   "inputs": [
     {
       "repo": "kken78/shiga-hino-plans",
-      "commit": "1c3f21c349cab6127c75ee65d8eff9f598df5bd8",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/fuhyo/fuhyo-r3.json",
+      "sha256": "029c86d1dc048f55a6098a5458b44b74ea4f7d061768093d77b9e18ba41bb4e2"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/fuhyo/fuhyo-r4.json",
+      "sha256": "0acc76300cfd243a1915da441f99bd222039c55aa49337cecff8d8340f3ff579"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/fuhyo/fuhyo-r5.json",
+      "sha256": "b65a9f4283faa6cafbfdf2abf75aec51c4fc1f6f92fed8fee2e0d6fdba13eb44"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/fuhyo/fuhyo-r6.json",
+      "sha256": "59be9fbb3aecb08597422bd567164ddc7fa0299852d1dddfd43cb5decc030eec"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/fuhyo/fuhyo-r7.json",
+      "sha256": "fb60c0626125f809175f3c3c39c568bc19d55a85a5ec660e152176ffd8b89049"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
       "path": "data/fuhyo/fuhyo-r8.json",
       "sha256": "49a939da97935a62c0ce98c4f72912083dd48d881dfb2d69de1384b64d5a59a6"
     },
     {
       "repo": "kken78/shiga-hino-plans",
-      "commit": "1c3f21c349cab6127c75ee65d8eff9f598df5bd8",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/audit_log/fuhyo-r3.tsv",
+      "sha256": "4c549eebbbfae924d2d1fd2e6e960383839b5b732bb239dfb5b7666d93940160"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/audit_log/fuhyo-r4.tsv",
+      "sha256": "184381efb7905d84ccaf5d371b875ad9047a9e54e799ffe70e073dd61a92475a"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/audit_log/fuhyo-r5.tsv",
+      "sha256": "b8975bb99e804cce3d3a5603572687a3760ea41572f8cb134b58c266e6cddd7f"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/audit_log/fuhyo-r6.tsv",
+      "sha256": "4ff59195d913f5ffed7e7ddac563237f85361bcb6e9163baf67f58dc9bb10572"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/audit_log/fuhyo-r7.tsv",
+      "sha256": "f2642c8772a4679bacbf62ced4f1f9eaeb58d83dd2af952016548bb7f94a8b0a"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
       "path": "data/audit_log/fuhyo-r8.tsv",
       "sha256": "b69b02be69410d7a5a414a5469a8303c4281f3dcb788514672af7fbe066abaa5"
     },
     {
       "repo": "kken78/shiga-hino-plans",
-      "commit": "1c3f21c349cab6127c75ee65d8eff9f598df5bd8",
-      "path": "data/sources_index.tsv",
-      "sha256": "74d83f860f8e992f667167a6074cd0c1972c7c0518d959f24bf66b02e47f8701"
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/source_issues/fuhyo-r3.tsv",
+      "sha256": "85a078923f2873306a6b6c7731f3d9a55e7b7bf8c026c16f3551637991200b4e"
     },
     {
       "repo": "kken78/shiga-hino-plans",
-      "commit": "1c3f21c349cab6127c75ee65d8eff9f598df5bd8",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/source_issues/fuhyo-r4.tsv",
+      "sha256": "667c338bb0bf49511cbeaab482761662a0b1cb53139a53ae8534c219a8be47e6"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/source_issues/fuhyo-r5.tsv",
+      "sha256": "a7fa81887175564e3d89dc0f908a34737f0a09bcaaa9c155b6dc64855649cfb1"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/source_issues/fuhyo-r6.tsv",
+      "sha256": "8da98560fbe58042a1753cb0389d79d53045c9afb984d431ba5d14e1e3079dc5"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/source_issues/fuhyo-r7.tsv",
+      "sha256": "ff5441924e6fbf905c25edc05de0d5f8c855eb26f347d3e4cccab2773b373baf"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/source_issues/fuhyo-r8.tsv",
+      "sha256": "7aa9401f5d768fa50910f7384093fe7927a021b75eeb99fcefd879878713ff97"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
+      "path": "data/sources_index.tsv",
+      "sha256": "0b6af1e681b2ba167e4715424051d02e5e39e7ee981bd6b03356cb810e1cfb58"
+    },
+    {
+      "repo": "kken78/shiga-hino-plans",
+      "commit": "ee2f1794809c055ab858ee4cd279492d18c276f5",
       "path": "data/plans/jisshi.json",
       "sha256": "c9cd2e9deda195e68ee688651403d304c1392037adf5bb2370e1a4373a3e8304"
     },
     {
       "repo": "kken78/hino-ronten",
-      "commit": "0c714f7d03575aa7f77ba8e9590ad6ec1d1e69b8",
+      "commit": "09fb5c56d494825588429e734f189579042b6950",
       "path": "links/fuhyo.tsv",
       "sha256": "a333b90117a570164c5160f556efcbe0ed44fa43742792512f42f4b5671f6955"
+    },
+    {
+      "repo": "kken78/hino-ronten",
+      "commit": "09fb5c56d494825588429e734f189579042b6950",
+      "path": "links/fuhyo-years.tsv",
+      "sha256": "a15e30d9e3624e381afe64aea4d6fac0924508ae243e1205ea5b5322e64cd2c7"
+    },
+    {
+      "repo": "kken78/hino-town-docs",
+      "commit": "c1de9d46eef7797274de0f6c7e0d40347f77ed4f",
+      "path": "data/sources.tsv",
+      "sha256": "4c2257a6a4c85ee19cecc80d58b659182bc10f61efe595ab25c60179027070f0"
     }
   ]
 }
