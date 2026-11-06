@@ -8,3 +8,4 @@
 6. データの作り直しと検査は、README の「作り直し方」の手順で行う（`python3 tools/build_data.py`）。検算が合わなければ `data.js` は書き出されず、終了コード 1 で止まる。`data.js` は直接編集しない。
 7. 材料の版を上げたときは、`inputs.lock.json` と `data.js` を同じコミットで直す。材料は shiga-hino-plans・hino-ronten・hino-town-docs の3リポジトリ。PR と main への push のたびに、GitHub Actions（`.github/workflows/check.yml`）が `inputs.lock.json` の commit の材料で `tools/build_data.py` を実行し、`data.js` がコミットされたものと一致するかを確かめる。
 8. 増減は矢印と文言（▲ 増・▼ 減・＝ 同額）で示し、向きや良し悪しの色を使わない（hino-portal-prompts の DESIGN-portal-draft.md 3.3）。
+9. 町の予算のページの巡回は `tools/watch.py` と `.github/workflows/watch.yml`（README「町のページの巡回」）。巡回は見つけるだけで、データは変えない。新しい年度を取り込んだら `data/watch.tsv` にその年度の行を足す。
