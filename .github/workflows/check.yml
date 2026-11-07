@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # 材料のリポジトリを隣のフォルダに置くため、このリポジトリも1段下に置く
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           path: hino-budget
 
@@ -47,19 +47,19 @@ jobs:
           print('towndocs=' + commits['kken78/hino-town-docs'].pop())
           PY
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: kken78/shiga-hino-plans
           ref: ${{ steps.lock.outputs.plans }}
           path: shiga-hino-plans
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: kken78/hino-ronten
           ref: ${{ steps.lock.outputs.ronten }}
           path: hino-ronten
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: kken78/hino-town-docs
           ref: ${{ steps.lock.outputs.towndocs }}
